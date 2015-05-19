@@ -18,7 +18,7 @@ gulp.task('clean', function(cb){
 // sass compile
 gulp.task('sass', function () {
   gulp.src('./sass/**/*.sass')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass.sync().on('error', sass.logError))
     .pipe(gulp.dest('./css'));
 });
 

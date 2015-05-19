@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,18 +10,62 @@
 
     <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="one-half column" style="margin-top: 25%">
-          <h4>Basic Page</h4>
-          <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+      <h1 class="user-icon">
+        <a href="#"><img src="#" alt="" /></a>
+      </h1>
+      <nav class="global-nav" role="navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#" class="active">Tags</a></li>
+          <li><a href="#">Archives</a></li>
+          <li><a href="#">Ask</a></li>
+          <li><a href="#">Submit</a></li>
+          <li><a href="#">Group</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <!-- ========== ARTICLE ========== -->
+    <article class="article" role="main">
+      <aside class="aside">
+        <h1>サイトタイトル</h1>
+        <div class="search">
+          search box
         </div>
-      </div>
-    </div>
+      </aside>
+
+      <section class="posts">
+        <h1>Posts</h1>
+        <nav>
+          <ul class="tags">
+            <li><a href="#">tag1</a></li>
+            <li><a href="#">tag2</a></li>
+            <li><a href="#">tag3</a></li>
+            <li><a href="#">tag4</a></li>
+            <li><a href="#">tag5</a></li>
+          </ul>
+          <ul class="paginate">
+            <li><a href="#">&laquo; First</a></li>
+            <li><a href="#">&lsaquo; Prev</a></li>
+            <li><a href="#" class="number">1</a></li>
+            <li><a href="#" class="number">2</a></li>
+            <li><a href="#" class="number">3</a></li>
+            <li><a href="#" class="number">4</a></li>
+            <li><a href="#" class="number">5</a></li>
+            <li><a href="#" class="number">...</a></li>
+            <li><a href="#">Next &raquo;</a></li>
+            <li><a href="#">Last &rsaquo;</a></li>
+          </ul>
+        </nav>
+      </section>
+    </article>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

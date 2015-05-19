@@ -1,0 +1,142 @@
+
+
+// layout
+.header
+  background: $green
+  padding: 10px
+  overflow: hidden
+
+  .user-icon
+    margin: 0
+    padding: 0
+    float: left
+    line-height: 1
+    font-size: 0
+
+
+.global-nav
+  margin: 0
+  float: left
+
+  li
+    float: left
+    margin: 0 0 0 10px
+    list-style: none
+
+  a
+    color: rgba(black, .3)
+    &.active
+      color: rgba(white, .5)
+
+
+.aside
+  background: $beige
+  margin: 0 0 20px
+  padding: 10px
+  overflow: hidden
+
+  h1
+    font-size: 120%
+    font-weight: bold
+    float: left
+    line-height: 1
+    margin: 0 10px 0 0
+    opacity: .2
+
+  .search
+    float: left
+    line-height: 1
+
+
+.article
+  .posts
+    margin: 10px
+
+    h1
+      font-size: 2rem
+
+    .tags
+      overflow: hidden
+
+      li
+        font-size: 13px
+        list-style: none
+        float: left
+        margin: 0 10px 0 0
+        &:before
+          content: '# '
+          opacity: .5
+
+    .paginate
+      overflow: hidden
+      font-size: 12px
+
+      li
+        list-style: none
+        float: left
+        margin: 0 10px 0 0
+
+      a
+        color: rgba(black, .3)
+        &:hover
+          color: darken($green, 5%)
+          text-decoration: none
+
+      .number
+        font-size: 15px
+        position: relative
+        top: -4px
+
+
+/* Larger than mobile */
+// @media (min-width: 400px)
+
+/* Larger than phablet (also point when grid becomes active) */
+// @media (min-width: 550px)
+
+/* Larger than tablet */
+@media (min-width: 750px)
+  .header
+    background: $green
+    position: fixed
+    width: 80px
+    height: 100%
+    z-index: 4
+
+  .container
+    max-width: 100%
+    width: 100%
+
+  .article
+    margin-left: 80px
+
+    .container
+      margin: 0
+
+    .aside
+      background: $beige
+      margin: 0 0 30px
+      padding: 10px 20px
+      overflow: hidden
+
+      h1
+        font-size: 150%
+        font-weight: bold
+        float: left
+        line-height: 1
+        margin: 0 10px 0 0
+        opacity: .2
+
+      .search
+        float: left
+
+
+    .posts
+      padding: 0 0 0 40px
+
+
+/* Larger than desktop */
+// @media (min-width: 1000px)
+
+/* Larger than Desktop HD */
+// @media (min-width: 1200px)
