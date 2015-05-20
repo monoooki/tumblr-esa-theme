@@ -869,22 +869,6 @@ there.
       .article .posts .tags li:before {
         content: '# ';
         opacity: .5; }
-  .article .posts .paginate {
-    overflow: hidden;
-    font-size: 12px; }
-    .article .posts .paginate li {
-      list-style: none;
-      float: left;
-      margin: 0 10px 0 0; }
-    .article .posts .paginate a {
-      color: rgba(0, 0, 0, 0.3); }
-      .article .posts .paginate a:hover {
-        color: #08837d;
-        text-decoration: none; }
-    .article .posts .paginate .number {
-      font-size: 15px;
-      position: relative;
-      top: -4px; }
 
 /* Larger than mobile */
 /* Larger than phablet (also point when grid becomes active) */
@@ -929,3 +913,23 @@ a {
   a:hover {
     color: #08837d;
     text-decoration: underline; }
+
+.paginate {
+  overflow: hidden;
+  font-size: 12px; }
+  .paginate li {
+    list-style: none;
+    float: left;
+    margin: 0 10px 0 0; }
+  .paginate a {
+    color: rgba(0, 0, 0, 0.3); }
+    .paginate a:hover {
+      color: #08837d;
+      text-decoration: none; }
+    .paginate a.active {
+      color: black; }
+  .paginate .number {
+    font-size: 17px;
+    position: relative;
+    top: -7px;
+    font-weight: bold; }
