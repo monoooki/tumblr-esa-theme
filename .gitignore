@@ -1,5 +1,5 @@
 node_modules/
 
 dump.rdb
-style.min.css
-style.css
+css/
+dist/
