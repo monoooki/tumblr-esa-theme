@@ -57,16 +57,12 @@ body
   overflow: hidden
 
   h1
-    font-size: 120%
+    font-size: 1.3em
     font-weight: bold
     float: left
     line-height: 1
     margin: 0 10px 0 0
     opacity: .2
-
-  .search
-    float: left
-    line-height: 1
 
 
 // 主本体
@@ -107,12 +103,34 @@ body
           text-decoration: none
 
 
+.search
+  position: relative
+  text-align: right
+
+  .search-button
+    color: #ccc
+    position: absolute
+    right: 12px
+    top: 2px
+    line-height: 1
+
+
+input[type="text"].search-input
+  font-size: 14px
+  border-radius: 20px
+  height: 26px
+  margin: 0
+  position: relative
+  top: -3px
+
+
+
+
 // 連結型投稿
 .posts
-  border-bottom: 1px solid #ddd
 
   &>li
-    border-top: 1px solid #ddd
+    border-bottom: 1px solid #ddd
     margin: 10px 0
     padding: 10px 0
     list-style: none
