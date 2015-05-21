@@ -1,22 +1,22 @@
 body
   background: $beige
+  font-family: Lato, 'Helvetica Neue', Arial, 'ヒラギノ角ゴPro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif
 
 
-// layout
+// header
 .header
   background: $green
-  padding: 10px
   overflow: hidden
   box-sizing: border-box
 
   .user-icon
-    margin: 0
+    margin: 10px
     padding: 0
     float: left
     line-height: 1
     font-size: 0
     img
-      width: 48px
+      width: 32px
       position: relative
       top: 0
       +tra(all)
@@ -24,27 +24,35 @@ body
         top: -10px
 
 
+// グローバルナビ（緑の部分）
 .global-nav
   margin: 0
   float: left
 
   li
     float: left
-    margin: 0 0 0 10px
+    margin: 0
     list-style: none
 
   a
     color: rgba(black, .3)
-    height: 100%
     display: inline-block
+    line-height: 32px
+    font-size: 26px
+    color: rgba(0,0,0,0.15)
+    padding: 10px 15px
     &.active,
     &:hover
       color: rgba(white, .5)
 
+  span
+    display: none
 
+
+// タイトルとか検索の部分 ベージュ
 .aside
   background: $beige
-  margin: 0 0
+  margin: 0
   padding: 10px
   overflow: hidden
 
@@ -61,6 +69,7 @@ body
     line-height: 1
 
 
+// 主本体
 .article
   .main-section
     padding: 10px
@@ -68,6 +77,10 @@ body
 
     h1
       font-size: 2rem
+      margin: 1em 0
+      .fa
+        color: rgba(black, .3)
+        margin: 0 10px 0 0
 
     .tags
       overflow: hidden
@@ -81,8 +94,20 @@ body
           content: '# '
           opacity: .5
 
+      .count
+        color: #ccc
+        background: #eee
+        border-radius: 20px
+        margin-left: 5px
+        padding: 2px 5px
+        font-size: 10px
+
+      a
+        &:hover
+          text-decoration: none
 
 
+// 連結型投稿
 .posts
   border-bottom: 1px solid #ddd
 
@@ -155,7 +180,7 @@ body
     margin: 0
 
 
-
+// 下部主本体
 .footer
   background: $beige
   padding: 20px
@@ -179,6 +204,11 @@ body
 
 .img-circle
   border-radius: 100%
+
+
+
+
+
 
 
 /* Larger than mobile */
@@ -205,6 +235,7 @@ body
 
   .global-nav
     float: none
+    height: 100%
 
     li
       border-bottom: 1px solid rgba(black, .05)
@@ -217,6 +248,7 @@ body
         padding: 5px 0
         &:hover
           text-decoration: none
+
 
   .container
     max-width: 100%
