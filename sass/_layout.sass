@@ -6,29 +6,7 @@ body
 
 
 
-// グローバルナビ（緑の部分）
-.global-nav
-  margin: 0
-  float: left
 
-  li
-    float: left
-    margin: 0
-    list-style: none
-
-  a
-    color: rgba(black, .3)
-    display: inline-block
-    line-height: 32px
-    font-size: 26px
-    color: rgba(0,0,0,0.15)
-    padding: 10px 15px
-    &.active,
-    &:hover
-      color: rgba(white, .5)
-
-  span
-    display: none
 
 
 // タイトルとか検索の部分 ベージュ
@@ -240,23 +218,6 @@ input[type="text"].search-input
 
 /* Larger than tablet */
 @media (min-width: 750px)
-
-  .global-nav
-    float: none
-    height: 100%
-
-    li
-      border-bottom: 1px solid rgba(black, .05)
-      float: none
-      margin: 0
-      padding: 0
-      a
-        display: block
-        margin: 5px 0
-        padding: 5px 0
-        &:hover
-          text-decoration: none
-
 
   .container
     max-width: 100%

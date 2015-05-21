@@ -1,0 +1,45 @@
+.global-nav
+  float: left
+  @media (min-width: 750px)
+    float: none
+
+  li
+    float: left
+    margin-bottom: 0
+    list-style: none
+    @media (min-width: 750px)
+      float: none
+
+  a
+    display: inline-block
+    padding: 10px 15px
+    color: rgba(black, .15)
+    font-size: 26px
+    line-height: 32px
+    &.active,
+    &:hover
+      color: rgba(white, .5)
+
+
+  // ナビゲーションのラベル
+  span
+    display: none
+    @media (min-width: 750px)
+      display: block
+      font-size: 14px
+      text-align: center
+      line-height: 1
+
+
+  // iconサイズ調整
+  .fa-home
+    font-size: 28px
+
+  .fa-tags,
+  .fa-file-text-o,
+  .fa-group
+    font-size: 24px
+
+  .fa-comment-o
+    position: relative
+    top: -1px
