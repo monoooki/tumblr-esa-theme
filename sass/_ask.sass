@@ -1,0 +1,29 @@
+// 質問フォーム
+.ask
+  h2
+    font-size: 20px
+    margin: 0 0 10px
+
+  textarea
+    background: rgba(black, .1)
+    box-shadow: inset 0 0 2px rgba(black, .1)
+    width: 100%
+    +tra(background)
+    &:focus
+      background: white
+
+  .btn
+    text-align: right
+
+  .btn-esa-primary
+    font-size: 14px
+    border: 1px solid rgba(black, .3)
+    box-shadow: inset 0 1px 0 rgba(white, .3)
+    color: #fff
+    background: $green
+    border-color: darken($green, 5%)
+    text-transform: none
+    +tra(background)
+    &:hover
+      background: darken($green, 10%)
+      color: #fff
