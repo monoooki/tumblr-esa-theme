@@ -4,15 +4,16 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
+var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 
-gulp.task('default', ['clean', 'sass', 'autoprefixer', 'watch']);
+gulp.task('default', ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html', 'watch']);
 
 
 
-// css clean
+// css, html clean
 gulp.task('clean', function(cb){
-  del(['css/*.css'], cb);
+  del(['css/*.css', './dist/*'], cb);
 });
 
 // sass compile
@@ -38,7 +39,23 @@ gulp.task('autoprefixer', function(){
 // image compress
 
 
+// html concat
+gulp.task('build-posts-html', function() {
+  return gulp.src(['./html/header.html', './html/posts.html', './html/footer.html'])
+    .pipe(concat('posts.html'))
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('build-post-html', function() {
+  return gulp.src(['./html/header.html', './html/post.html', './html/footer.html'])
+    .pipe(concat('post.html'))
+    .pipe(gulp.dest('./dist/'));
+});
+
+
+
+
 // ... watch
 gulp.task('watch', function(){
-  gulp.watch('./sass/**/*.sass', ['clean', 'sass', 'autoprefixer']);
+  gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html']);
 });

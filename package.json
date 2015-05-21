@@ -9,7 +9,7 @@
     "gulp-autoprefixer": "^2.3.0",
     "gulp-imagemin": "^2.2.1",
     "del": "^1.1.1",
-    "concat": "^1.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-concat": "^2.5.2"
   }
 }
