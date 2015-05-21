@@ -1,0 +1,27 @@
+.permalink-paginate
+  overflow: hidden
+  font-size: 13px
+  padding-bottom: 20px
+
+  li
+    list-style: none
+
+  .fa
+    opacity: .5
+    +tra(opacity)
+
+  a
+    &:hover
+      text-decoration: none
+      .fa
+        opacity: 1
+
+  .prev
+    float: left
+    .fa
+      margin-right: 3px
+
+  .next
+    float: right
+    .fa
+      margin-left: 3px
