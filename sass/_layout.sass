@@ -1,3 +1,5 @@
+body
+  background: $beige
 
 
 // layout
@@ -5,6 +7,7 @@
   background: $green
   padding: 10px
   overflow: hidden
+  box-sizing: border-box
 
   .user-icon
     margin: 0
@@ -12,6 +15,13 @@
     float: left
     line-height: 1
     font-size: 0
+    img
+      width: 48px
+      position: relative
+      top: 0
+      +tra(all)
+      &:hover
+        top: -10px
 
 
 .global-nav
@@ -25,13 +35,16 @@
 
   a
     color: rgba(black, .3)
-    &.active
+    height: 100%
+    display: inline-block
+    &.active,
+    &:hover
       color: rgba(white, .5)
 
 
 .aside
   background: $beige
-  margin: 0 0 20px
+  margin: 0 0
   padding: 10px
   overflow: hidden
 
@@ -49,8 +62,9 @@
 
 
 .article
-  .posts
-    margin: 10px
+  .main-section
+    padding: 10px
+    background: white
 
     h1
       font-size: 2rem
@@ -68,6 +82,105 @@
           opacity: .5
 
 
+
+.posts
+  border-bottom: 1px solid #ddd
+
+  &>li
+    border-top: 1px solid #ddd
+    margin: 10px 0
+    padding: 10px 0
+    list-style: none
+    overflow: hidden
+    position: relative
+
+  .user-icon
+    width: 64px
+    float: left
+
+    img
+      width: 64px
+      +tra(opacity)
+      &:hover
+        opacity: .8
+
+  .post-content
+    margin-left: 64px + 15px
+
+  .tags
+    margin: 0
+    font-size: 14px
+    line-height: 1.3
+    a
+      color: #ccc
+    .date
+      &:after
+        content: ' /'
+        color: #eee
+
+  .post-title
+    font-size: 1.5em
+    margin: 0 0 5px
+    a
+      color: black
+      &:hover
+        color: darken($green, 5%)
+        text-decoration: none
+
+  .post-meta
+    margin: 0
+    &>li
+      list-style: none
+      margin: 0 5px 0 0
+      padding: 0 5px 0 0
+      float: left
+      border-right: 1px solid #ddd
+      line-height: 1.3
+    a
+      color: #ccc
+      &.active
+        color: $green
+        .fa-heart
+          color: pink
+    .fa
+      font-size: 10px
+      margin-right: 5px
+
+  .post-update
+    position: absolute
+    right: 0
+    bottom: 8px
+    font-size: .8em
+    color: #aaa
+    margin: 0
+
+
+
+.footer
+  background: $beige
+  padding: 20px
+  color: rgba(black, .3)
+
+  a
+    color: rgba(black, .3)
+
+  .user-icon
+    img
+      width: 64px
+    span
+      position: relative
+      top: -5px
+      font-weight: bold
+
+  .copyright
+    font-size: 12px
+    a
+      font-weight: bold
+
+.img-circle
+  border-radius: 100%
+
+
 /* Larger than mobile */
 // @media (min-width: 400px)
 
@@ -82,6 +195,28 @@
     width: 80px
     height: 100%
     z-index: 4
+    padding: 20px 0 0
+    text-align: center
+
+    .user-icon
+      float: none
+      img
+        width: 64px
+
+  .global-nav
+    float: none
+
+    li
+      border-bottom: 1px solid rgba(black, .05)
+      float: none
+      margin: 0
+      padding: 0
+      a
+        display: block
+        margin: 5px 0
+        padding: 5px 0
+        &:hover
+          text-decoration: none
 
   .container
     max-width: 100%
@@ -95,7 +230,7 @@
 
     .aside
       background: $beige
-      margin: 0 0 30px
+      margin: 0
       padding: 10px 20px
       overflow: hidden
 
@@ -111,8 +246,8 @@
         float: left
 
 
-    .posts
-      padding: 0 0 0 40px
+    .main-section
+      padding: 40px 0 0 40px
 
 
 /* Larger than desktop */
