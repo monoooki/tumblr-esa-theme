@@ -1,0 +1,20 @@
+.date-and-tags
+  margin: 0 0 3px
+  font-size: 14px
+  overflow: hidden
+
+  li
+    list-style: none
+    float: left
+    margin: 0 0 0 7px
+    &:first-child
+      margin-left: 0
+    &:after
+      content: '/'
+      color: rgba(black, .1)
+      margin-left: 6px
+
+  a
+    color: rgba(black, .4)
+    &:hover
+      color: darken($green, 5%)

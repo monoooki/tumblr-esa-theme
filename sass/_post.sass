@@ -1,0 +1,51 @@
+.post
+  .post-header
+    margin: 1em 0
+
+  .date-and-tags
+    font-size: 16px
+
+  .post-title
+    a
+      color: rgba(black, .8)
+      &:hover
+        color: darken($green, 5%)
+        text-decoration: none
+
+  .post-meta
+    font-size: 13px
+    border-bottom: 3px solid rgba(black, .1)
+    padding-bottom: 1em
+
+    > li
+      list-style: none
+      line-height: 1.3
+      margin-bottom: 5px
+    a
+      color: rgba(black, .35)
+      &:hover
+        color: darken($green, 5%)
+        text-decoration: none
+        .fa-heart
+          color: hotpink
+
+    span
+      margin-right: 5px
+
+    .count
+      display: inline-block
+      min-width: 20px
+      text-align: center
+      color: rgba(black, .3)
+      background: rgba(black, .08)
+      border-radius: 20px
+      padding: 2px 7px
+      font-size: 9px
+      font-family: 'Avenir Next', Avenir, sans-serif
+      font-weight: bold
+      letter-spacing: -.5px
+      position: relative
+      top: -2px
+
+    .fa
+      margin-right: 5px
