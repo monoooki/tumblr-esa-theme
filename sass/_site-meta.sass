@@ -1,0 +1,36 @@
+// タイトルとか検索の部分 ベージュ
+.site-meta
+  background: $beige
+  padding: 10px
+  position: relative
+  overflow: hidden
+  @media (min-width: 750px)
+    padding: 10px 20px
+
+  h1
+    color: rgba(black, .2)
+    font-size: 1.3em
+    font-weight: bold
+    margin: 0
+    @media (min-width: 750px)
+      font-size: 150%
+
+  .search
+    position: absolute
+    top: 10px
+    right: 10px
+
+  .search-input
+    font-size: 14px
+    border-radius: 20px
+    height: 26px
+
+  .search-button
+    color: rgba(black, .3)
+    font-size: 12px
+    position: absolute
+    right: 12px
+    top: 7px
+    line-height: 1
+    &:hover
+      color: rgba(black, .5)
