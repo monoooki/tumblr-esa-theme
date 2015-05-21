@@ -18,7 +18,21 @@
     </article>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+
+    // toc toggle
+      var $toc = $('.toc-toggle');
+      $toc.on('click', function(){
+        $(this).next().toggle('500', function(){
+          if ($(this).is(":visible")) {
+            $toc.find('i').removeClass('fa-caret-right').addClass('fa-caret-down');
+          } else {
+            $toc.find('i').removeClass('fa-caret-down').addClass('fa-caret-right');
+          }
+        });
+      });
+    </script>
 
     <!-- GoogleAnalytics -->
 

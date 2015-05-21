@@ -1,2 +1,11 @@
 =tra($property)
   transition: $property .2s ease
+
+=link
+  color: $green
+  margin: 0
+  padding: 0
+  cursor: pointer
+  +tra(color)
+  &:hover
+    color: darken($green, 5%)
