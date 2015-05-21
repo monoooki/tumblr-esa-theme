@@ -24,7 +24,7 @@
     // toc toggle
       var $toc = $('.toc-toggle');
       $toc.on('click', function(){
-        $(this).next().toggle('500', function(){
+        $(this).next().toggle('fast', function(){
           if ($(this).is(":visible")) {
             $toc.find('i').removeClass('fa-caret-right').addClass('fa-caret-down');
           } else {
