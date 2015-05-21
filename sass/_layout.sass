@@ -3,25 +3,7 @@ body
   font-family: Lato, 'Helvetica Neue', Arial, 'ヒラギノ角ゴPro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif
 
 
-// header
-.header
-  background: $green
-  overflow: hidden
-  box-sizing: border-box
 
-  .user-icon
-    margin: 10px
-    padding: 0
-    float: left
-    line-height: 1
-    font-size: 0
-    img
-      width: 32px
-      position: relative
-      top: 0
-      +tra(all)
-      &:hover
-        top: -10px
 
 
 // グローバルナビ（緑の部分）
@@ -258,19 +240,6 @@ input[type="text"].search-input
 
 /* Larger than tablet */
 @media (min-width: 750px)
-  .header
-    background: $green
-    position: fixed
-    width: 80px
-    height: 100%
-    z-index: 4
-    padding: 20px 0 0
-    text-align: center
-
-    .user-icon
-      float: none
-      img
-        width: 64px
 
   .global-nav
     float: none
