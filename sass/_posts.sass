@@ -1,0 +1,88 @@
+// 連結型投稿
+.posts
+
+  > li
+    border-bottom: 1px solid rgba(black, .1)
+    margin: 15px 0
+    padding: 15px 0 25px
+    list-style: none
+    overflow: hidden
+    position: relative
+
+  .user-icon
+    width: 64px
+    float: left
+
+    img
+      width: 64px
+      +tra(opacity)
+      &:hover
+        opacity: .8
+
+  .post-content
+    margin-left: 64px + 15px
+
+
+  .date-and-tags
+    margin: 0 0 3px
+    font-size: 14px
+    overflow: hidden
+
+    li
+      list-style: none
+      float: left
+      margin: 0 0 0 7px
+      &:first-child
+        margin-left: 0
+      &:after
+        content: '/'
+        color: rgba(black, .1)
+        margin-left: 6px
+
+    a
+      color: rgba(black, .4)
+      &:hover
+        color: darken($green, 5%)
+
+
+  .post-title
+    font-size: 1.5em
+    margin: 0 0 5px
+    a
+      color: black
+      &:hover
+        color: darken($green, 5%)
+        text-decoration: none
+
+
+  .post-meta
+    margin: 0
+    &>li
+      list-style: none
+      margin: 0 10px 0 0
+      padding: 0 10px 0 0
+      float: left
+      border-right: 1px solid rgba(black, .1)
+      line-height: 1.3
+    a
+      color: rgba(black, .35)
+      &:hover
+        color: darken($green, 5%)
+        .fa-heart
+          color: pink
+
+    .fa
+      font-size: 11px
+      margin-right: 5px
+
+
+  .post-update
+    position: absolute
+    right: 0
+    bottom: 15px
+    font-size: .8em
+    color: rgba(black, .4)
+    margin: 0
+
+    a
+      margin: 0 5px 0 0
