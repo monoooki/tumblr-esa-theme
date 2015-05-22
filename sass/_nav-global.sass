@@ -2,13 +2,18 @@
   float: left
   @media (min-width: 750px)
     float: none
+    height: 100%
+    border-top: 1px solid rgba(black, .05)
 
   li
     float: left
     margin-bottom: 0
     list-style: none
     @media (min-width: 750px)
+      border-bottom: 1px solid rgba(black, .05)
       float: none
+      margin: 0
+      padding: 0
 
   a
     display: inline-block
@@ -21,6 +26,13 @@
       color: rgba(white, .5)
       span
         color: white
+    @media (min-width: 750px)
+      display: block
+      margin: 5px 0
+      padding: 5px 0
+      &:hover
+        text-decoration: none
+
 
 
   // ナビゲーションのラベル
