@@ -7,7 +7,7 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 
-gulp.task('default', ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html', 'watch']);
+gulp.task('default', ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html', 'build-post-video-html', 'watch']);
 
 
 
@@ -52,10 +52,16 @@ gulp.task('build-post-html', function() {
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('build-post-video-html', function() {
+  return gulp.src(['./html/header.html', './html/post-video.html', './html/footer.html'])
+    .pipe(concat('post-video.html'))
+    .pipe(gulp.dest('./dist/'));
+});
+
 
 
 
 // ... watch
 gulp.task('watch', function(){
-  gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html']);
+  gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html', 'build-post-video-html']);
 });
