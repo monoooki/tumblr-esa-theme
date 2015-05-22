@@ -82,9 +82,15 @@ gulp.task('build-post-audio-html', function() {
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('build-post-chat-html', function() {
+  return gulp.src(['./html/header.html', './html/post-chat.html', './html/footer.html'])
+    .pipe(concat('post-chat.html'))
+    .pipe(gulp.dest('./dist/'));
+});
+
 
 
 // ... watch
 gulp.task('watch', function(){
-  gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html', 'build-post-video-html', 'build-post-text-html', 'build-post-image-html', 'build-post-photoset-html', 'build-post-audio-html']);
+  gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html', 'build-post-video-html', 'build-post-text-html', 'build-post-image-html', 'build-post-photoset-html', 'build-post-audio-html', 'build-post-chat-html']);
 });
