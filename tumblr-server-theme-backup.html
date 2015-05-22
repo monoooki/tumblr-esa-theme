@@ -429,15 +429,28 @@
           }
         });
       });
-      
-      
+
+
       // posts title checker
       $('.post-title a').each(function(){
-        if ($(this).text() === '') {
+        var text = $(this).text().replace(/\s+/, '');
+        if (text === '') {
+          $(this).text('タイトル無し');
+        }
+        if (text.length > 30) {
+          $(this).text(text.substr(0, 30) + '...');
+        }
+      });
+
+      // posts title checker
+      $('.post-title a').each(function(){
+          var text = $(this).text().replace(/\s+/, '');
+        if (text === '') {
           $(this).text('タイトル無し');
         }
       });
-      
+
+
       // add Reblog text
       $(".reblog_button").append('');
     </script>
