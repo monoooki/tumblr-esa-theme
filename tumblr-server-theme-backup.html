@@ -80,212 +80,45 @@
         {block:Posts}
         {block:IndexPage}
         <ul class="posts">
-        {block:Link}
-        <li><span style="position:absolute;font-size:10px;background:white">{PostType}</span>
+          <li>
+            <span style="position:absolute;font-size:10px;background:white">{PostType}</span>
             <a href="#" class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" /></a>
             <div class="post-content">
               <ul class="date-and-tags">
-                 <li>{Year}</li>
-                  <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
-                  <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
-                  {block:HasTags}
-                      {block:Tags}
-                          <li><a href="{TagURL}">{Tag}</a></li>
-                      {/block:Tags}
-                  {/block:HasTags}
+                <li>{Year}</li>
+                <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
+                <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
+                {block:HasTags}
+                  {block:Tags}
+                    <li><a href="{TagURL}">{Tag}</a></li>
+                  {/block:Tags}
+                {/block:HasTags}
                </ul>
-              <h2 class="post-title"><a href="{Permalink}">{Name}</a></h2>
-              <ul class="post-meta">
-               <li><a href="#">{LikeButton size="13"}</a></li>
-               <li>{ReblogButton size="13"}</li>
-               <li><a href="#"><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></a>{PostNotes}</li>
-              </ul>
-              <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
-            </div>
-          </li>
-            {/block:Link}
-            
-            {block:Photo}
-            <li><span style="position:absolute;font-size:10px;background:white">{PostType}</span>
-            <a href="#" class="user-icon"><img src="{PhotoURL-75sq}" alt="" class="img-circle" /></a>
-            <div class="post-content">
-              <ul class="date-and-tags">
-                 <li>{Year}</li>
-                  <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
-                  <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
-                  {block:HasTags}
-                      {block:Tags}
-                          <li><a href="{TagURL}">{Tag}</a></li>
-                      {/block:Tags}
-                  {/block:HasTags}
+               <h2 class="post-title"><a href="{Permalink}">
+                  {block:Photo}{PhotoAlt}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Photo}
+                  {block:Text}{Title}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Text}
+                  {block:Link}{Name}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Link}
+                  {block:Quote}{Quote}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Quote}
+                  {block:Chat}{Title}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Chat}
+                  {block:Audio}{PlaintextTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Audio}
+                  {block:Video}{PlaintextCaption}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Video}
+                  {block:Answer}{Title}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Answer}
+               </a></h2>
+               <ul class="post-meta">
+                 <li><a href="#">{LikeButton size="13"}</a></li>
+                 <li>{ReblogButton size="13"}</li>
+                 <li><a href="#"><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></a>{PostNotes}</li>
                </ul>
-              <h2 class="post-title"><a href="{Permalink}">{PhotoAlt}</a></h2>
-              <ul class="post-meta">
-               <li><a href="#">{LikeButton size="13"}</a></li>
-               <li>{ReblogButton size="13"}</li>
-               <li><a href="#"><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></a>{PostNotes}</li>
-              </ul>
-              <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
-            </div>
-          </li>
-            {/block:Photo}
-            
-            {block:Text}
-            <li><span style="position:absolute;font-size:10px;background:white">{PostType}</span>
-            <a href="#" class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" /></a>
-            <div class="post-content">
-              <ul class="date-and-tags">
-                 <li>{Year}</li>
-                  <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
-                  <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
-                  {block:HasTags}
-                      {block:Tags}
-                          <li><a href="{TagURL}">{Tag}</a></li>
-                      {/block:Tags}
-                  {/block:HasTags}
-               </ul>
-              <h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>
-              <ul class="post-meta">
-               <li><a href="#">{LikeButton size="13"}</a></li>
-               <li>{ReblogButton size="13"}</li>
-               <li><a href="#"><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></a>{PostNotes}</li>
-              </ul>
-              <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
-            </div>
-          </li>
-            {/block:Text}
-            
-            {block:Quote}
-            <li><span style="position:absolute;font-size:10px;background:white">{PostType}</span>
-            <a href="#" class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" /></a>
-            <div class="post-content">
-              <ul class="date-and-tags">
-                 <li>{Year}</li>
-                  <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
-                  <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
-                  {block:HasTags}
-                      {block:Tags}
-                          <li><a href="{TagURL}">{Tag}</a></li>
-                      {/block:Tags}
-                  {/block:HasTags}
-               </ul>
-              <h2 class="post-title"><a href="{Permalink}">{Quote}</a></h2>
-              <ul class="post-meta">
-               <li><a href="#">{LikeButton size="13"}</a></li>
-               <li>{ReblogButton size="13"}</li>
-               <li><a href="#"><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></a>{PostNotes}</li>
-              </ul>
-              <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
-            </div>
-          </li>
-            {/block:Quote}
-            
-            {block:Chat}
-            <li><span style="position:absolute;font-size:10px;background:white">{PostType}</span>
-            <a href="#" class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" /></a>
-            <div class="post-content">
-              <ul class="date-and-tags">
-                 <li>{Year}</li>
-                  <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
-                  <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
-                  {block:HasTags}
-                      {block:Tags}
-                          <li><a href="{TagURL}">{Tag}</a></li>
-                      {/block:Tags}
-                  {/block:HasTags}
-               </ul>
-              <h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>
-              <ul class="post-meta">
-               <li><a href="#">{LikeButton size="13"}</a></li>
-               <li>{ReblogButton size="13"}</li>
-               <li><a href="#"><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></a>{PostNotes}</li>
-              </ul>
-              <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
-            </div>
-          </li>
-            {/block:Chat}
-            
-            {block:Audio}
-            <li><span style="position:absolute;font-size:10px;background:white">{PostType}</span>
-            <a href="#" class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" /></a>
-            <div class="post-content">
-              <ul class="date-and-tags">
-                 <li>{Year}</li>
-                  <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
-                  <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
-                  {block:HasTags}
-                      {block:Tags}
-                          <li><a href="{TagURL}">{Tag}</a></li>
-                      {/block:Tags}
-                  {/block:HasTags}
-               </ul>
-              <h2 class="post-title"><a href="{Permalink}">{PlaintextTitle}</a></h2>
-              <ul class="post-meta">
-               <li><a href="#">{LikeButton size="13"}</a></li>
-               <li>{ReblogButton size="13"}</li>
-               <li><a href="#"><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></a>{PostNotes}</li>
-              </ul>
-              <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
-            </div>
-          </li>
-            {/block:Audio}
-            
-            {block:Video}
-            <li><span style="position:absolute;font-size:10px;background:white">{PostType}</span>
-            <a href="#" class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" /></a>
-            <div class="post-content">
-              <ul class="date-and-tags">
-                 <li>{Year}</li>
-                  <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
-                  <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
-                  {block:HasTags}
-                      {block:Tags}
-                          <li><a href="{TagURL}">{Tag}</a></li>
-                      {/block:Tags}
-                  {/block:HasTags}
-               </ul>
-              <h2 class="post-title"><a href="{Permalink}">{PlaintextCaption}</a></h2>
-              <ul class="post-meta">
-               <li><a href="#">{LikeButton size="13"}</a></li>
-               <li>{ReblogButton size="13"}</li>
-               <li><a href="#"><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></a>{PostNotes}</li>
-              </ul>
-              <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
-            </div>
-          </li>
-            {/block:Video}
-            
-            {block:Answer}
-            <li><span style="position:absolute;font-size:10px;background:white">{PostType}</span>
-            <a href="#" class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" /></a>
-            <div class="post-content">
-              <ul class="date-and-tags">
-                 <li>{Year}</li>
-                  <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
-                  <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
-                  {block:HasTags}
-                      {block:Tags}
-                          <li><a href="{TagURL}">{Tag}</a></li>
-                      {/block:Tags}
-                  {/block:HasTags}
-               </ul>
-              <h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>
-              <ul class="post-meta">
-               <li><a href="#">{LikeButton size="13"}</a></li>
-               <li>{ReblogButton size="13"}</li>
-               <li><a href="#"><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></a>{PostNotes}</li>
-              </ul>
-              <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
-            </div>
-          </li>
-            {/block:Answer}
-            </ul>
-            {/block:IndexPage} 
-            
-            
+               <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
+             </div>
+            </li>
+          </ul>
+          {/block:IndexPage}
+
+
             {block:PermalinkPage}
             <div class="post">
-            
+
                 {block:Text}
                     <header class="post-header">
                     <ul class="date-and-tags">
@@ -305,12 +138,10 @@
                       <li><a href="#"><i class="fa fa-comment"></i><span>Notes</span><span class="count">{NoteCount}</span></a>{PostNotes}</li>
                      </ul>
                   </header>
-                    
-                    
+
                     <div class="post-body">{Body}</div>
                 {/block:Text}
-                
-                
+
                 {block:Photo}{PostType}{/block:Photo}
                 {block:Panorama}{PostType}{/block:Panorama}
                 {block:Photoset}{PostType}{/block:Photoset}
@@ -318,7 +149,8 @@
                 {block:Link}{PostType}{/block:Link}
                 {block:Chat}{PostType}{/block:Chat}
                 {block:Audio}{PostType}{/block:Audio}
-                
+
+
                 {block:Video}
                 <header class="post-header">
                     <ul class="date-and-tags">
