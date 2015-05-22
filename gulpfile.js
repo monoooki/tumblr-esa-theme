@@ -58,10 +58,16 @@ gulp.task('build-post-video-html', function() {
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('build-post-text-html', function() {
+  return gulp.src(['./html/header.html', './html/post-text.html', './html/footer.html'])
+    .pipe(concat('post-text.html'))
+    .pipe(gulp.dest('./dist/'));
+});
+
 
 
 
 // ... watch
 gulp.task('watch', function(){
-  gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html', 'build-post-video-html']);
+  gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html', 'build-post-video-html', 'build-post-text-html']);
 });
