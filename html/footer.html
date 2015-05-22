@@ -33,6 +33,13 @@
         });
       });
 
+      // posts title checker
+      $('.post-title a').each(function(){
+        if ($(this).text() === '') {
+          $(this).text('タイトル無し');
+        }
+      });
+
       // add Reblog text
       $(".reblog_button").append('<span>Reblog</span>');
     </script>
