@@ -32,6 +32,31 @@
         .fa-heart
           color: hotpink
 
+    // tumblr suki, reblog button
+    .like_button
+      display: inline
+      margin-right: 5px
+      + span
+        color: rgba(black, .35)
+
+    .reblog_button
+      display: inline-block !important
+      margin-right: 5px
+      position: relative
+      top: 2px
+      width: auto !important
+      height: auto !important
+      svg
+        width: 13px
+        height: 13px
+        margin-right: 5px
+        position: relative
+        top: 2px
+      &:hover
+        svg
+          color: darken($green, 5%)
+          fill: currentColor
+
     span
       margin-right: 5px
 
@@ -52,6 +77,14 @@
 
     .fa
       margin-right: 5px
+
+    // tumblr Suki button
+    // .like_button
+    //   display: inline
+    //   margin-right: 3px
+    // 
+    //   iframe
+    //     width: 13px
 
 
   .post-body
