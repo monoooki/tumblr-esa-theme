@@ -336,6 +336,12 @@
 
       // add Reblog text
       $(".reblog_button").append('');
+
+      // navigation
+      var pathname = location.pathname;
+      if (pathname === '/submit') {
+        $('#nav-submit').addClass('active');
+      }
     </script>
 
     <!-- GoogleAnalytics -->
