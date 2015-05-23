@@ -77,9 +77,9 @@
 
 
         <!-- POSTS -->
-        {block:Posts}
         {block:IndexPage}
         <ul class="posts">
+          {block:Posts}
           <li>
             <span style="position:absolute;font-size:10px;background:white">{PostType}</span>
             <a href="#" class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" /></a>
@@ -112,11 +112,13 @@
                <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
              </div>
             </li>
+            {/block:Posts}
           </ul>
           {/block:IndexPage}
 
 
             {block:PermalinkPage}
+            {block:Posts}
             <div class="post {PostType}">
               <header class="post-header">
               <ul class="date-and-tags">
