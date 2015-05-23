@@ -37,8 +37,15 @@
     <article class="article" role="main">
       <section class="site-meta">
         <h1><a href="#">サイトタイトル</a></h1>
-        <div class="search">
-          <input type="text" name="name" value="" placeholder="search" class="search-input">
+        <!-- 日本語向けにgoogle検索で代用 -->
+        <form class="search" id="search-google" action="https://www.google.co.jp/search" target="_blank" method="get">
+          <input type="hidden" name="q" value="site:http://monoooki.net/">
+          <input type="text" name="q" value="" placeholder="search" class="search-input">
+          <span href="" class="search-button"><i class="fa fa-search"></i></span>
+        </form>
+        <!-- 英語圏は純正検索を使用 -->
+        <form class="search-tumblr" id="search-tumblr" action="/search" method="get">
+          <input type="text" name="q" value="{SearchQuery}" class="search-input"/>
           <a href="#" class="search-button"><i class="fa fa-search"></i></a>
-        </div>
+        </form>
       </section>

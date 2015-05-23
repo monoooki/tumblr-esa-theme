@@ -42,6 +42,23 @@
 
       // add Reblog text
       $(".post .reblog_button").append('<span>Reblog</span>');
+
+      // navigation
+      var pathname = location.pathname;
+      if (pathname === '/submit') {
+        $('#nav-submit').addClass('active');
+      }
+
+      // search
+      var $searchGoogle = $('#search-google');
+      $searchGoogle.find('.search-button').on('click', function(){
+        $searchGoogle.submit();
+      });
+
+      var $searchTumblr = $('#search-tumblr');
+      $searchTumblr.find('.search-button').on('click', function(){
+        $searchTumblr.submit();
+      });
     </script>
 
     <!-- GoogleAnalytics -->
