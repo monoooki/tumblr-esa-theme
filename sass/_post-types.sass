@@ -60,23 +60,26 @@
 
 
 &.answer
-  .asker-block
+  .asker-block,
+  .answerer-block
     overflow: hidden
     margin: 20px 0
 
-  .asker-avatar
+  .asker-avatar,
+  .answerer-avatar
     float: left
     margin-right: 20px
 
-  .asker-text
-    float: left
+  .asker-text,
+  .answerer-text
+    margin-left: 84px
     background: rgba(black, .05)
     padding: 10px 20px
     border-radius: 5px
     position: relative
     &:after
       right: 100%
-      top: 50%
+      top: 34px
       border: solid transparent
       content: " "
       height: 0
