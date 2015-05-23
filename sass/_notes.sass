@@ -1,0 +1,48 @@
+// notes, reblog chain
+ol.notes
+  padding: 0px
+  margin: 25px 0px
+  list-style-type: none
+  border-bottom: 2px solid rgba(black, .05)
+  font-size: 12px
+  color: rgba(black, .5)
+
+  .note
+    margin: 0
+    padding: 10px
+    border-bottom: 1px solid rgba(black, .05)
+
+    .avatar
+      vertical-align: -4px
+      margin-right: 10px
+      width: 16px
+      height: 16px
+
+    .answer_content
+      font-weight: normal
+
+    blockquote
+      border-color: #eee
+      padding: 4px 10px
+      margin: 10px 0px 0px 25px
+
+      a
+        text-decoration: none
+
+  .more_notes_link_container
+    padding: 0
+
+  .more_notes_link
+    padding: 10px
+    display: block
+    +tra(background)
+    &:hover
+      background: rgba(black, .05)
+      text-decoration: none
+
+  .tumblelog,
+  .action > a
+    margin-right: 5px
+
+  .source_tumblelog
+    margin: 0 5px
