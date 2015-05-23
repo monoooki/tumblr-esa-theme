@@ -104,14 +104,14 @@
                 {/block:HasTags}
                </ul>
                <h2 class="post-title"><a href="{Permalink}">
-                  {block:Photo}{PhotoAlt}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Photo}
-                  {block:Text}{Title}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Text}
-                  {block:Link}{Name}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Link}
-                  {block:Quote}{Quote}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Quote}
-                  {block:Chat}{Title}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Chat}
-                  {block:Audio}{PlaintextTitle}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Audio}
-                  {block:Video}{PlaintextCaption}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Video}
-                  {block:Answer}{Title}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Answer}
+                {block:Text}{block:Title}{Title}{/block:Title}{/block:Text}
+{block:Photo}{block:Caption}{PlaintextCaption}{/block:Caption}{/block:Photo}
+{block:Quote}{Quote}{/block:Quote}
+{block:Link}{Name}{/block:Link}
+{block:Chat}{block:Title}{Title}{/block:Title} {block:Lines}{Line}{/block:Lines}{/block:Chat}
+{block:Audio}{block:Caption}{PlaintextCaption}{/block:Caption}{/block:Audio}
+{block:Video}{block:Caption}{PlaintextCaption}{/block:Caption}{/block:Video}
+{block:Answer}{Question}{/block:Answer}
                </a></h2>
                <ul class="post-meta">
                  <li>{LikeButton size="13"}</li>
@@ -131,6 +131,7 @@
             <div class="post {PostType}">
               <header class="post-header">
               <ul class="date-and-tags">
+                <li class="posttype"><a href="{BlogURL}archive/filter-by/{PostType}">{PostType}</a></li>
                  <li>{Year}</li>
                   <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
                   <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
@@ -140,7 +141,14 @@
                       {/block:Tags}
                   {/block:HasTags}
                </ul>
-               <h2 class="post-title"><a href="{Permalink}">{Title}{block:Link}{Name}{/block:Link}</a></h2>
+               <h2 class="post-title">
+                  <a href="{Permalink}">
+                  {block:Text}{block:Title}{Title}{/block:Title}{/block:Text}
+                  {block:Link}{Name}{/block:Link}
+                  {block:Chat}{block:Title}{Title}{/block:Title}{/block:Chat}
+                  {block:Answer}{Question}{/block:Answer}
+                  </a>
+                </h2>
                <ul class="post-meta">
                 <li>{LikeButton size="13"}<span>Suki</span></li>
                 <li>{ReblogButton size="13"}</li>
@@ -327,21 +335,16 @@
 
 
       // posts title checker
-      $('.post-title a').each(function(){
-        var text = $(this).text().replace(/\s+/, '');
+      $('.posts .post-title a').each(function(){
+        var text = $(this).text().replace(/[\n\r]/g, '');
+        text = text.replace(/^\s+/, '');
+        text = text.replace(/\s+$/, '');
         if (text === '') {
           $(this).text('タイトル無し');
         }
+        console.log(text.length, text);
         if (text.length > 30) {
           $(this).text(text.substr(0, 30) + '...');
-        }
-      });
-
-      // posts title checker
-      $('.post-title a').each(function(){
-          var text = $(this).text().replace(/\s+/, '');
-        if (text === '') {
-          $(this).text('タイトル無し');
         }
       });
 
