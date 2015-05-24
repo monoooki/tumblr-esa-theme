@@ -376,7 +376,9 @@
 
       // navigation
       var pathname = location.pathname;
-      if (pathname === '/submit') {
+      if (pathname === '/') {
+        $('#nav-home').addClass('active');
+      } else if (pathname === '/submit') {
         $('#nav-submit').addClass('active');
       }
 
