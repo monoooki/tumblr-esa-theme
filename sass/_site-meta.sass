@@ -1,5 +1,7 @@
 // タイトルとか検索の部分 ベージュ
 .site-meta
+  $search-width: 100px
+
   background: $beige
   padding: 10px
   position: relative
@@ -12,8 +14,10 @@
     font-size: 1.3em
     font-weight: bold
     margin: 0
+    margin-right: $search-width + 10px
     @media (min-width: 750px)
       font-size: 150%
+      margin-right: $search-width + 70px + 10px
 
     a
       color: rgba(black, .2)
@@ -21,16 +25,23 @@
         color: rgba(black, .4)
         text-decoration: none
 
+
   .search,
   .search-tumblr
     position: absolute
     top: 10px
     right: 10px
+    width: $search-width
+    @media (min-width: 750px)
+      width: $search-width + 70px
 
   .search-input
     font-size: 14px
     border-radius: 20px
     height: 26px
+    width: $search-width
+    @media (min-width: 750px)
+      width: $search-width + 70px
 
   .search-button
     +link()
