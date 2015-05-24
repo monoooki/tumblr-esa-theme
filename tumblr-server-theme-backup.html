@@ -363,12 +363,25 @@
         text = text.replace(/\s+$/, '');
         if (text === '') {
           $(this).text('タイトル無し');
-        }
-        console.log(text.length, text);
-        if (text.length > 30) {
-          $(this).text(text.substr(0, 30) + '...');
+        } else {
+          $(this).text(truncate(text));
         }
       });
+
+      // https://gist.github.com/Cside/806088
+      function truncate(str, size, suffix) {
+          if (!str) str = '';
+          if (!size) size = 30;
+          if (!suffix) suffix = '...';
+          var b = 0;
+          for (var i = 0;  i < str.length; i++) {
+              b += str.charCodeAt(i) <= 255 ? 1 : 2;
+              if (b > size) {
+                  return str.substr(0, i) + suffix;
+              }
+          }
+          return str;
+      }
 
 
       // add Reblog text
