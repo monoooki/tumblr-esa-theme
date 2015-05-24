@@ -1,8 +1,10 @@
 &.video
-  .post-body
-    // overflow: hidden
+  .caption
+    margin: 2em 0
+    color: rgba(black, .8)
 
-&.image
+&.image,
+&.photo
   img
     max-width: 100%
 
@@ -49,14 +51,19 @@
     + h2
       margin-top: 10px
 
-  .caption
+  .caption,
+  .excerpt
     color: rgba(black, .5)
     background: rgba(black, .05)
+    margin: 0 0 1em
     padding: 1em
     border-radius: 5px
     font-size: .8em
     p:last-child
       margin: 0
+
+  .author
+    font-weight: bold
 
 
 &.answer
@@ -100,3 +107,10 @@
     color: rgba(black, .5)
     margin: 1.5em .5em
     font-style: italic
+
+  .quote-source
+    font-size: 12px
+    
+    span
+      font-weight: bold
+      margin-right: .5em
