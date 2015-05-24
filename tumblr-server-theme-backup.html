@@ -90,9 +90,10 @@
         <ul class="posts">
           {block:Posts}
           <li>
-            <a href="#" class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" /></a>
+            <span class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" />{block:RebloggedFrom}<i class="fa fa-retweet reblogged">{/block:RebloggedFrom}</i></span>
             <div class="post-content">
               <ul class="date-and-tags">
+                {block:RebloggedFrom}<li>Reblogged</li>{/block:RebloggedFrom}
                 <li class="posttype"><a href="{BlogURL}archive/filter-by/{PostType}">{PostType}</a></li>
                 <li>{Year}</li>
                 <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>

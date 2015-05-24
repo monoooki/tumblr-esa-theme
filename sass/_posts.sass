@@ -14,12 +14,20 @@
   .user-icon
     width: 64px
     float: left
+    position: relative
 
     img
       width: 64px
       +tra(opacity)
       &:hover
         opacity: .8
+
+    .reblogged
+      color: rgba(black, .5)
+      text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white
+      position: absolute
+      top: 0
+      left: 0
 
   .post-content
     margin-left: 64px + 15px
