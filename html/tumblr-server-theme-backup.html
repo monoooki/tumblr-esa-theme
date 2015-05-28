@@ -138,196 +138,182 @@
         {/block:IndexPage}
 
 
-            {block:PermalinkPage}
-            {block:Posts}
-            <div class="post {PostType}">
-              <header class="post-header">
-              <ul class="date-and-tags">
-                {block:RebloggedFrom}<li>Reblogged</li>{/block:RebloggedFrom}
-                <li class="posttype"><a href="{BlogURL}archive/filter-by/{PostType}">{PostType}</a></li>
-                 <li>{Year}</li>
-                  <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
-                  <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
-                  {block:HasTags}
-                      {block:Tags}
-                          <li><a href="{TagURL}">{Tag}</a></li>
-                      {/block:Tags}
-                  {/block:HasTags}
-               </ul>
-               <h2 class="post-title">
-                  <a href="{Permalink}">
-                  {block:Text}{block:Title}{Title}{/block:Title}{/block:Text}
-                  {block:Link}{Name}{/block:Link}
-                  {block:Chat}{block:Title}{Title}{/block:Title}{/block:Chat}
-                  {block:Answer}{Question}{/block:Answer}
-                  </a>
-                </h2>
-               <ul class="post-meta">
-                <li>{LikeButton size="13"}<span>Suki</span></li>
-                <li>{ReblogButton size="13"}</li>
-                <li><i class="fa fa-comment"></i><span>Notes</span><span class="count">{NoteCount}</span></li>
-               </ul>
-            </header>
+        {block:PermalinkPage}
+        {block:Posts}
+        <div class="post {PostType}">
+          <header class="post-header">
+            <ul class="date-and-tags">
+              {block:RebloggedFrom}<li>Reblogged</li>{/block:RebloggedFrom}
+              <li class="posttype"><a href="{BlogURL}archive/filter-by/{PostType}">{PostType}</a></li>
+              <li>{Year}</li>
+              <li><a href="/archive/{Year}/{MonthNumber}">{MonthNumberWithZero}</a></li>
+              <li><a href="/day/{Year}/{MonthNumber}/{DayOfMonth}">{DayOfMonthWithZero}</a></li>
+              {block:HasTags}
+                  {block:Tags}
+                      <li><a href="{TagURL}">{Tag}</a></li>
+                  {/block:Tags}
+              {/block:HasTags}
+            </ul>
+            <h2 class="post-title">
+              <a href="{Permalink}">
+                {block:Text}{block:Title}{Title}{/block:Title}{/block:Text}
+                {block:Link}{Name}{/block:Link}
+                {block:Chat}{block:Title}{Title}{/block:Title}{/block:Chat}
+                {block:Answer}{Question}{/block:Answer}
+              </a>
+            </h2>
+            <ul class="post-meta">
+              <li>{LikeButton size="13"}<span>Suki</span></li>
+              <li>{ReblogButton size="13"}</li>
+              <li><i class="fa fa-comment"></i><span>Notes</span><span class="count">{NoteCount}</span></li>
+            </ul>
+          </header>
 
-            <div class="post-body">
-                {block:Text}
-                    {Body}
-                {/block:Text}
+          <div class="post-body">
+            {block:Text}
+                {Body}
+            {/block:Text}
 
-                {block:Photo}
-                <p><img src="{PhotoURL-500}" alt="" /></p>
-                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-                {/block:Photo}
+            {block:Photo}
+            <p><img src="{PhotoURL-500}" alt="" /></p>
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            {/block:Photo}
 
-                {block:Panorama}
-                <div><img src="{PhotoURL-Panorama}" alt="" /></div>
-                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-                {/block:Panorama}
+            {block:Panorama}
+            <div><img src="{PhotoURL-Panorama}" alt="" /></div>
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            {/block:Panorama}
 
-                {block:Photoset}
-                {Photoset}
-                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-                {/block:Photoset}
+            {block:Photoset}
+            {Photoset}
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            {/block:Photoset}
 
-                {block:Quote}
-                <div class="{Length}">
-                  <blockquote>{Quote}</blockquote>
-                  {block:Source}
-                  <div class="quote-source">
-                    <span>source:</span>
-                    {Source}
-                  </div>
-                  {/block:Source}
+            {block:Quote}
+            <div class="{Length}">
+              <blockquote>{Quote}</blockquote>
+              {block:Source}
+              <div class="quote-source">
+                <span>source:</span>
+                {Source}
+              </div>
+              {/block:Source}
+            </div>
+            {/block:Quote}
+
+            {block:Link}
+            {block:Thumbnail}<p class="thumb"><img src="{Thumbnail}" alt="" /></p>{/block:Thumbnail}
+            {block:Host}<p class="host">{Host}</p>{/block:Host}
+            <h2><a href="{URL}" {Target}>{Name}</a></h2>
+            {block:Description}<div class="caption">{Description}</div>{/block:Description}
+            {block:Author}<div class="author">via {Author}</div>{/block:Author}
+            {block:Excerpt}<div class="excerpt">{Excerpt}</div>{/block:Excerpt}
+            {/block:Link}
+
+            {block:Chat}
+            <ul class="ul-chat">
+              {block:Lines}
+              <li class="{Alt} user_{UserNumber}">
+              {block:Label}
+              <span class="label">{Label}</span>
+              {/block:Label}
+              {Line}
+              </li>
+              {/block:Lines}
+            </ul>
+            {/block:Chat}
+
+            {block:Audio}
+            {block:AudioEmbed}<div class="audio-player">{AudioEmbed}</div>{/block:AudioEmbed}
+            {block:AudioPlayer}<div class="audio-player">{AudioPlayer}</div>{/block:AudioPlayer}
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            {/block:Audio}
+
+            {block:Video}
+              {Video-700}
+                {block:Caption}
+                <div class="caption">
+                  {Caption}
                 </div>
-                {/block:Quote}
+                <p>{PlayCountWithLabel}</p>
+                {/block:Caption}
+            {/block:Video}
 
-                {block:Link}
-                {block:Thumbnail}<p class="thumb"><img src="{Thumbnail}" alt="" /></p>{/block:Thumbnail}
-                {block:Host}<p class="host">{Host}</p>{/block:Host}
-                <h2><a href="{URL}" {Target}>{Name}</a></h2>
-                {block:Description}<div class="caption">{Description}</div>{/block:Description}
-                {block:Author}<div class="author">via {Author}</div>{/block:Author}
-                {block:Excerpt}<div class="excerpt">{Excerpt}</div>{/block:Excerpt}
-                {/block:Link}
-
-                {block:Chat}
-                <ul class="ul-chat">
-                  {block:Lines}
-                  <li class="{Alt} user_{UserNumber}">
-                  {block:Label}
-                  <span class="label">{Label}</span>
-                  {/block:Label}
-                  {Line}
-                  </li>
-                  {/block:Lines}
-                </ul>
-                {/block:Chat}
-
-                {block:Audio}
-                {block:AudioEmbed}<div class="audio-player">{AudioEmbed}</div>{/block:AudioEmbed}
-                {block:AudioPlayer}<div class="audio-player">{AudioPlayer}</div>{/block:AudioPlayer}
-                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-                {/block:Audio}
-
-                {block:Video}
-                  {Video-700}
-                    {block:Caption}
-                    <div class="caption">
-                      {Caption}
-                    </div>
-                    <p>{PlayCountWithLabel}</p>
-                    {/block:Caption}
-                {/block:Video}
-
-                {block:Answer}
-                <div class="question">
-                  <div class="asker-block">
-                    <img class="asker-avatar img-circle" src="{AskerPortraitURL-64}" alt="">
-                    <div class="asker-text">
-                      {Asker}
-                      <div class="asker-question">{Question}</div>
-                    </div>
-                  </div>
+            {block:Answer}
+            <div class="question">
+              <div class="asker-block">
+                <img class="asker-avatar img-circle" src="{AskerPortraitURL-64}" alt="">
+                <div class="asker-text">
+                  {Asker}
+                  <div class="asker-question">{Question}</div>
                 </div>
-
-                {block:Answerer}
-                <div class="answer">
-                  <div class="answerer-block">
-                    <img class="answerer-avatar img-circle" src="{AnswererPortraitURL-64}" alt="">
-                    <div class="answerer-text">
-                      <div class="answerer">{Answerer}</div>
-                      <div class="answerer-answer">{Answer}</div>
-                    </div>
-                  </div>
-                </div>
-                {/block:Answerer}
-
-                <div class="replies">
-                  {Replies}
-                </div>
-                {/block:Answer}
-
-                {block:Hidden}
-                {block:RebloggedFrom}
-                  <p>
-                  <a href="{ReblogParentURL}">[parent] {ReblogParentTitle} - {ReblogParentName}</a>
-                  <img src="{ReblogParentPortraitURL-32}">
-                  </p>
-                  <p>
-                  <a href="{ReblogRootURL}">[root] {ReblogRootTitle} - {ReblogRootName}</a>
-                  <img src="{ReblogRootPortraitURL-32}">
-                  </p>
-                {/block:RebloggedFrom}
-                {/block:Hidden}
-
-                {block:RebloggedFrom}
-                <p><a href="{ReblogRootURL}">{ReblogRootTitle} - {ReblogRootName}</a></p>
-                {/block:RebloggedFrom}
-
-            </div><!-- /post-body -->
-
-              <ul class="post-meta">
-               <li>{LikeButton size="13"}<span>Suki</span></li>
-               <li>{ReblogButton size="13"}</li>
-               <li><i class="fa fa-comment"></i><span>Notes</span><span class="count">{NoteCount}</span></li>
-              </ul>
-              
-              {PostNotes}
+              </div>
             </div>
 
-            {block:PermalinkPagination}
-            <ul class="permalink-paginate">
-                {block:PreviousPost}
-                    <li class="prev"><a href="{PreviousPost}"><i class="fa fa-angle-left"></i> Previous Post</a></li>
-                {/block:PreviousPost}
+            {block:Answerer}
+            <div class="answer">
+              <div class="answerer-block">
+                <img class="answerer-avatar img-circle" src="{AnswererPortraitURL-64}" alt="">
+                <div class="answerer-text">
+                  <div class="answerer">{Answerer}</div>
+                  <div class="answerer-answer">{Answer}</div>
+                </div>
+              </div>
+            </div>
+            {/block:Answerer}
 
-                {block:NextPost}
-                    <li class="next"><a href="{NextPost}">Next Post <i class="fa fa-angle-right"></i></a></li>
-                {/block:NextPost}
-            {/block:PermalinkPagination}
-            {/block:Posts}
-            {/block:PermalinkPage}
-          
+            <div class="replies">
+              {Replies}
+            </div>
+            {/block:Answer}
+
+            {block:RebloggedFrom}
+            <p><a href="{ReblogRootURL}">{ReblogRootTitle} - {ReblogRootName}</a></p>
+            {/block:RebloggedFrom}
+          </div><!-- /post-body -->
+
+          <ul class="post-meta">
+            <li>{LikeButton size="13"}<span>Suki</span></li>
+            <li>{ReblogButton size="13"}</li>
+            <li><i class="fa fa-comment"></i><span>Notes</span><span class="count">{NoteCount}</span></li>
+          </ul>
+
+          {PostNotes}
+        </div><!-- /post -->
+
+        {block:PermalinkPagination}
+        <ul class="permalink-paginate">
+            {block:PreviousPost}
+                <li class="prev"><a href="{PreviousPost}"><i class="fa fa-angle-left"></i> Previous Post</a></li>
+            {/block:PreviousPost}
+
+            {block:NextPost}
+                <li class="next"><a href="{NextPost}">Next Post <i class="fa fa-angle-right"></i></a></li>
+            {/block:NextPost}
+        </ul>
+        {/block:PermalinkPagination}
+
+        {/block:Posts}
+        {/block:PermalinkPage}
 
 
-
-
-
+        {block:Pagination}
         <!-- PAGING -->
-          {block:Pagination}
-          <ul class="paginate">
-            {block:PreviousPage}
-            <li><a href="{PreviousPage}">&lsaquo; Prev</a></li>
-            {/block:PreviousPage}
-            {block:JumpPagination length="5"}
+        <ul class="paginate">
+          {block:PreviousPage}
+          <li><a href="{PreviousPage}">&lsaquo; Prev</a></li>
+          {/block:PreviousPage}
+
+          {block:JumpPagination length="5"}
           {block:CurrentPage}<li class="number active">{PageNumber}</li>{/block:CurrentPage}
           {block:JumpPage}<li><a class="number" href="{URL}">{PageNumber}</a></li>{/block:JumpPage}
-        {/block:JumpPagination}
-            {block:NextPage}
-            <li><a href="{NextPage}">Next &raquo;</a></li>
-            {/block:NextPage}
-          </ul>
-          {/block:Pagination}
+          {/block:JumpPagination}
+
+          {block:NextPage}
+          <li><a href="{NextPage}">Next &raquo;</a></li>
+          {/block:NextPage}
+        </ul>
+        {/block:Pagination}
       </section>
 
 
@@ -341,6 +327,7 @@
             </a>
           </p>
         <p class="copyright">&copy;{CopyrightYears} {Title} all rights reserved. / inspired by <a href="https://esa.io" target="_blank">esa.io</a></p>
+
         {block:AskEnabled}
         <div class="ask">
           <h2>{AskLabel}</h2>
@@ -397,6 +384,7 @@
 
       // add Reblog text
       $(".post .reblog_button").append('<span>Reblog</span>');
+
 
       // navigation
       var pathname = location.pathname;
