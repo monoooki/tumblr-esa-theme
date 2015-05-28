@@ -59,6 +59,29 @@
       $searchTumblr.find('.search-button').on('click', function(){
         $searchTumblr.submit();
       });
+
+      // for template design test
+      $('[id^="posttype-"]').hide().appendTo('.post-body');
+      $('#posttypenavi').append("" +
+        "<button data-type='text'></button>" +
+        "<button data-type='image'></button>" +
+        "<button data-type='photoset'></button>" +
+        "<button data-type='link'></button>" +
+        "<button data-type='quote-short'></button>" +
+        "<button data-type='quote-long'></button>" +
+        "<button data-type='chat'></button>" +
+        "<button data-type='audio'></button>" +
+        "<button data-type='video'></button>" +
+        "<button data-type='answer'></button>" +
+      "").children().each(function(){
+        var type = $(this).data('type');
+        $(this).text(type).on('click', function(){
+          $('#posttype').removeClass().addClass('post ' + type);
+          $('[id^="posttype-"]').hide();
+          $('#posttype-' + type).show()
+        });
+      });
+
     </script>
 
     <!-- GoogleAnalytics -->
