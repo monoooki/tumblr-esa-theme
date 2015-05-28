@@ -4,11 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
-    <meta name="description" content="">
+    <meta name="description" content="{MetaDescription}">
+
+    {block:Hidden}
+    <!-- ユーザー名を入れる他のサービスがあれば使う。.user-iconのaltにも流用できる。 -->
     <meta name="author" content="">
+    {/block:Hidden}
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link rel="shortcut icon" href="{Favicon}">
     <link rel="apple-touch-icon" href="{PortraitURL-128}">
     <link rel="canonical" href="{Permalink}"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
