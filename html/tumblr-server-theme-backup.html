@@ -344,7 +344,7 @@
         {block:AskEnabled}
         <div class="ask">
           <h2>{AskLabel}</h2>
-          <iframe frameborder="0" scrolling="no" width="100%" height="190" src="https://www.tumblr.com/ask_form/torinoesa.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]-->
+          <iframe frameborder="0" scrolling="no" width="100%" height="190" src="https://www.tumblr.com/ask_form/" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]-->
         </div>
         {/block:AskEnabled}
       </footer>
@@ -413,6 +413,10 @@
         $search.submit();
       });
 
+
+      // footer askform
+      var $footerAsk = $('footer #ask_form');
+      $footerAsk.attr('src', $footerAsk.attr('src') + location.hostname);
     </script>
 
     <!-- GoogleAnalytics -->
