@@ -6,9 +6,10 @@
     <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
     <meta name="description" content="{MetaDescription}">
 
-    {block:IfDisqusShortname}
+    {block:Hidden}
     <meta name='text:Disqus Shortname' content='' />
-    {/block:IfDisqusShortname}
+    <meta name='text:Google Analytics ID' content='' />
+    {/block:Hidden}
 
     {block:Hidden}
     <!-- ユーザー名を入れる他のサービスがあれば使う。.user-iconのaltにも流用できる。 -->
@@ -441,6 +442,18 @@
       // footer askform
       var $footerAsk = $('footer #ask_form');
       $footerAsk.attr('src', $footerAsk.attr('src') + location.hostname);
+
+
+      {block:IfGoogleAnalyticsID}
+      // Google Analytics
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '{text:Google Analytics ID}', 'auto');
+      ga('send', 'pageview');
+      {/block:IfGoogleAnalyticsID}
     </script>
 
     <!-- GoogleAnalytics -->
