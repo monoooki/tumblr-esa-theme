@@ -67,38 +67,39 @@
       </section>
 
       <section class="main-section">
-
-      {block:IndexPage}
+        {block:IndexPage}
         <h1><i class="fa fa-file-text-o"></i>Posts</h1>
         <nav>
-            <div id="tagCloud"></div><script type="text/javascript" src="//post-theory.com/public/tagcloud/torinoesa?tn={Name}&sort=time&mincount=1&scale=false&html=ul&tagct=%24" async="async"></script>
-
-
+          <div id="tagCloud"></div><script type="text/javascript" src="//post-theory.com/public/tagcloud/torinoesa?tn={Name}&sort=time&mincount=1&scale=false&html=ul&tagct=%24" async="async"></script>
           <!-- PAGING -->
           {block:Pagination}
           <ul class="paginate">
             {block:PreviousPage}
             <li><a href="{PreviousPage}">&lsaquo; Prev</a></li>
             {/block:PreviousPage}
+
             {block:JumpPagination length="5"}
-          {block:CurrentPage}<li class="number active">{PageNumber}</li>{/block:CurrentPage}
-          {block:JumpPage}<li><a class="number" href="{URL}">{PageNumber}</a></li>{/block:JumpPage}
-        {/block:JumpPagination}
+            {block:CurrentPage}<li class="number active">{PageNumber}</li>{/block:CurrentPage}
+            {block:JumpPage}<li><a class="number" href="{URL}">{PageNumber}</a></li>{/block:JumpPage}
+            {/block:JumpPagination}
+
             {block:NextPage}
             <li><a href="{NextPage}">Next &raquo;</a></li>
             {/block:NextPage}
           </ul>
           {/block:Pagination}
         </nav>
-{/block:IndexPage} 
-
+        {/block:IndexPage}
 
         <!-- POSTS -->
         {block:IndexPage}
         <ul class="posts">
           {block:Posts}
           <li>
-            <span class="user-icon"><img src="{PortraitURL-128}" alt="" class="img-circle" />{block:RebloggedFrom}<i class="fa fa-retweet reblogged">{/block:RebloggedFrom}</i></span>
+            <span class="user-icon">
+              <img src="{PortraitURL-128}" alt="" class="img-circle" />
+              {block:RebloggedFrom}<i class="fa fa-retweet reblogged">{/block:RebloggedFrom}</i>
+            </span>
             <div class="post-content">
               <ul class="date-and-tags">
                 {block:RebloggedFrom}<li>Reblogged</li>{/block:RebloggedFrom}
@@ -111,28 +112,30 @@
                     <li><a href="{TagURL}">{Tag}</a></li>
                   {/block:Tags}
                 {/block:HasTags}
-               </ul>
-               <h2 class="post-title"><a href="{Permalink}">
-                {block:Text}{block:Title}{Title}{/block:Title}{/block:Text}
-{block:Photo}{block:Caption}{PlaintextCaption}{/block:Caption}{/block:Photo}
-{block:Quote}{Quote}{/block:Quote}
-{block:Link}{Name}{/block:Link}
-{block:Chat}{block:Title}{Title}{/block:Title} {block:Lines}{Line}{/block:Lines}{/block:Chat}
-{block:Audio}{block:Caption}{PlaintextCaption}{/block:Caption}{/block:Audio}
-{block:Video}{block:Caption}{PlaintextCaption}{/block:Caption}{/block:Video}
-{block:Answer}{Question}{/block:Answer}
-               </a></h2>
-               <ul class="post-meta">
-                 <li>{LikeButton size="13"}</li>
-                 <li>{ReblogButton size="13"}</li>
-                 <li><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></li>
-               </ul>
-               <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
-             </div>
-            </li>
-            {/block:Posts}
-          </ul>
-          {/block:IndexPage}
+              </ul>
+              <h2 class="post-title">
+                <a href="{Permalink}">
+                  {block:Text}{block:Title}{Title}{/block:Title}{/block:Text}
+                  {block:Photo}{block:Caption}{PlaintextCaption}{/block:Caption}{/block:Photo}
+                  {block:Quote}{Quote}{/block:Quote}
+                  {block:Link}{Name}{/block:Link}
+                  {block:Chat}{block:Title}{Title}{/block:Title} {block:Lines}{Line}{/block:Lines}{/block:Chat}
+                  {block:Audio}{block:Caption}{PlaintextCaption}{/block:Caption}{/block:Audio}
+                  {block:Video}{block:Caption}{PlaintextCaption}{/block:Caption}{/block:Video}
+                  {block:Answer}{Question}{/block:Answer}
+                </a>
+              </h2>
+              <ul class="post-meta">
+                <li>{LikeButton size="13"}</li>
+                <li>{ReblogButton size="13"}</li>
+                <li><i class="fa fa-comment"></i><span class="count">{NoteCount}</span></li>
+              </ul>
+              <p class="post-update">Updated by <a href="{PostAuthorURL}">{PostAuthorName}</a> {TimeAgo}</p>
+            </div>
+          </li>
+          {/block:Posts}
+        </ul>
+        {/block:IndexPage}
 
 
             {block:PermalinkPage}
