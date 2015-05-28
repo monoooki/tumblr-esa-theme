@@ -1,7 +1,5 @@
 node_modules/
+dist/
 
 dump.rdb
-css/
-dist/
-tumblr_base_theme.html
 /*.html
