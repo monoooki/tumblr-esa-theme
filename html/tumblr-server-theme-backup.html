@@ -48,8 +48,8 @@
     <header class="header">
       <h1 class="user-icon">
         <a href="https://www.tumblr.com/dashboard">
-          <!-- <img src="http://static.tumblr.com/d9rtz7y/XuXnp1wv9/esa_face.jpg" alt="" width="128" height="128"/> -->
-          <img src="{PortraitURL-128}" alt="" class="img-circle" />
+          {block:ShowAvatar}<img src="{PortraitURL-128}" alt="" class="img-circle" />{/block:ShowAvatar}
+          {block:HideAvatar}<img src="http://static.tumblr.com/d9rtz7y/XuXnp1wv9/esa_face.jpg" alt="" class="img-circle"/>{/block:HideAvatar}
         </a>
       </h1>
       <nav class="global-nav" role="navigation">
@@ -120,7 +120,8 @@
           {block:Posts}
           <li>
             <span class="user-icon">
-              <img src="{PortraitURL-128}" alt="" class="img-circle" />
+              {block:ShowAvatar}<img src="{PortraitURL-128}" alt="" class="img-circle" />{/block:ShowAvatar}
+              {block:HideAvatar}<img src="http://static.tumblr.com/d9rtz7y/XuXnp1wv9/esa_face.jpg" alt="" class="img-circle"/>{/block:HideAvatar}
               {block:RebloggedFrom}<i class="fa fa-retweet reblogged">{/block:RebloggedFrom}</i>
             </span>
             <div class="post-content">
@@ -364,7 +365,8 @@
       <footer class="footer">
         <p class="site-title">
           <a href="/" class="user-icon">
-            <img src="{PortraitURL-128}" alt="" class="img-circle" />
+            {block:ShowAvatar}<img src="{PortraitURL-128}" alt="" class="img-circle" />{/block:ShowAvatar}
+            {block:HideAvatar}<img src="http://static.tumblr.com/d9rtz7y/XuXnp1wv9/esa_face.jpg" alt="" class="img-circle"/>{/block:HideAvatar}
             <span class="title">{Title}</span>
             <span class="description">{Description}</span>
           </a>
