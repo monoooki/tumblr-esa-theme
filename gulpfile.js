@@ -12,27 +12,27 @@ gulp.task('default', ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'buil
 
 
 // css, html clean
-gulp.task('clean', function(cb){
-  del(['css/*.css', './dist/*'], cb);
+gulp.task('clean', function() {
+  del(['./dist/*']);
 });
 
 // sass compile
 gulp.task('sass', function () {
   gulp.src('./sass/**/*.sass')
     .pipe(sass.sync().on('error', sass.logError))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./dist'));
 });
 
 // autoprefixer
-gulp.task('autoprefixer', function(){
-  return gulp.src('./css/style.css')
+gulp.task('autoprefixer', function() {
+  return gulp.src('./dist/style.css')
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
     .pipe(minifyCss())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./dist'));
 });
 
 
@@ -67,7 +67,7 @@ gulp.task('build-post-html', function() {
 });
 
 
-// ... watch
-gulp.task('watch', function(){
+// watch
+gulp.task('watch', function() {
   gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html']);
 });
