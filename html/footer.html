@@ -50,14 +50,9 @@
       }
 
       // search
-      var $searchGoogle = $('#search-google');
-      $searchGoogle.find('.search-button').on('click', function(){
-        $searchGoogle.submit();
-      });
-
-      var $searchTumblr = $('#search-tumblr');
-      $searchTumblr.find('.search-button').on('click', function(){
-        $searchTumblr.submit();
+      var $search = ($('#search-tumblr').length > 0) ? $('#search-tumblr') : $('#search-google');
+      $search.find('.search-button').on('click', function(){
+        $search.submit();
       });
 
       // for template design test
