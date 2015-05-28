@@ -52,14 +52,14 @@
       <section class="site-meta">
         <h1><a href="{BlogURL}">{Title}</a></h1>
         <!-- 日本語向けにgoogle検索で代用 -->
-        <form class="search" id="search-google" action="https://www.google.co.jp/search" target="_blank" method="get">
+        <form role="search" class="search" id="search-google" action="https://www.google.co.jp/search" target="_blank" method="get">
           <input type="hidden" name="q" value="site:{BlogURL}">
           <input type="text" name="q" value="" placeholder="search" class="search-input">
           <span href="" class="search-button"><i class="fa fa-search"></i></span>
         </form>
         {block:Hidden}
         <!-- 英語圏は純正検索を使用 -->
-        <form class="search-tumblr" id="search-tumblr" action="/search" method="get">
+        <form role="search" class="search-tumblr" id="search-tumblr" action="/search" method="get">
           <input type="text" name="q" value="{SearchQuery}" class="search-input"/>
           <a href="#" class="search-button"><i class="fa fa-search"></i></a>
         </form>
