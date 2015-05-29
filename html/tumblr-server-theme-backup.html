@@ -36,7 +36,37 @@
     <link rel="canonical" href="{Permalink}"/>
     <link rel="start" href="{BlogURL}" title="Home" />
 
-    <!-- OGPとかその辺入れる -->
+    <!-- OGP -->
+    <meta property="og:title" content="{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{PortraitURL-128}" />
+    <!-- Twitter tags -->
+    <meta name="twitter:image" content="{PortraitURL-128}" />
+     <!-- photo だったら og-image は photoURL にする -->
+    {block:PermalinkPage}
+      {block:Posts}
+        {block:Photo}
+          <meta property="og:image" content="{PhotoURL-HighRes}" />
+        {/block:Photo}
+        {block:Photoset}
+          {block:Photos}
+          <meta property="og:image" content="{PhotoURL-HighRes}" />
+          {/block:Photos}
+        {/block:Photoset}
+      {/block:Posts}
+    {/block:PermalinkPage}
+    <meta property="og:site_name" content="{Title}" />
+    {block:Description}
+    <meta property="og:description" content="{MetaDescription}">
+    {/block:Description}
+    {block:IndexPage}
+    <link rel="canonical" href="{BlogURL}"/>
+    <meta property="og:url" content="{BlogURL}" />
+    {/block:IndexPage}
+    {block:PermalinkPage}
+    <link rel="canonical" href="{Permalink}"/>
+    <meta property="og:url" content="{Permalink}" />
+    {/block:PermalinkPage}
 
 
 
