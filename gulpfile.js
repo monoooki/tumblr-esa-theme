@@ -7,7 +7,7 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 
-gulp.task('default', ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html', 'watch']);
+gulp.task('default', ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-posts-detail-html', 'build-post-html', 'watch']);
 
 
 
@@ -46,6 +46,12 @@ gulp.task('build-posts-html', function() {
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('build-posts-detail-html', function() {
+  return gulp.src(['./html/header.html', './html/posts_detail_view.html', './html/footer.html'])
+    .pipe(concat('posts_detail_view.html'))
+    .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('build-post-html', function() {
   return gulp.src([
       './html/header.html',
@@ -69,5 +75,5 @@ gulp.task('build-post-html', function() {
 
 // watch
 gulp.task('watch', function() {
-  gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-post-html']);
+  gulp.watch(['./sass/**/*.sass', './html/*'], ['clean', 'sass', 'autoprefixer', 'build-posts-html', 'build-posts-detail-html', 'build-post-html']);
 });
