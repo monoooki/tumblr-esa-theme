@@ -3,3 +3,4 @@ dist/
 
 dump.rdb
 /*.html
+!/tumblr-esa-theme.html
