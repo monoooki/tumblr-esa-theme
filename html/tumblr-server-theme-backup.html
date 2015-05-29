@@ -267,19 +267,6 @@
 
             </div><!-- /post -->
           </div><!-- /posts-detail -->
-
-          {block:PermalinkPagination}
-          <ul class="permalink-paginate">
-              {block:PreviousPost}
-                  <li class="prev"><a href="{PreviousPost}"><i class="fa fa-angle-left"></i> Previous Post</a></li>
-              {/block:PreviousPost}
-
-              {block:NextPost}
-                  <li class="next"><a href="{NextPost}">Next Post <i class="fa fa-angle-right"></i></a></li>
-              {/block:NextPost}
-          </ul>
-          {/block:PermalinkPagination}
-
           {/block:Posts}
         </div><!-- /autopagerize_page_element -->
         {/block:IfShowContentsInPosts}
